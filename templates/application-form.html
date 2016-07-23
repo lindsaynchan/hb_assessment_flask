@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title%}Application Form{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+            <h2>Application Form</h2>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-6">
+            <p>Please fill out the following:<br><br>
+                1. First name<br>
+                2. Last name<br>
+                3. Salary requirement<br>
+                4. Select the job the application is for.</p><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <form action="/application" method="GET">
+                <div class="form-group">
+                    <label for="firstname">First Name</label> 
+                    <input type="text" class="form-control" name="firstname"
+                    placeholdr="First Name">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label> 
+                    <input type="text" class="form-control" name="lastname"
+                    placeholdr="Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="salary">Salary Requirement</label> 
+                    <label class="sr-only" for="salary">Amount (in dollars)</label>
+                        <div class="input-group">
+                          <div class="input-group-addon">$</div>
+                          <input type="text" class="form-control" name="salaryreq" placeholder="Salary">
+                          <div class="input-group-addon">.00</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                      <label for="sel1">Job Title:</label>
+                      <select class="form-control" name="jobtitle">
+                        <option>Software Engineer</option>
+                        <option>QA Engineer</option>
+                        <option>Product Manager</option>
+                      </select>
+                    </div>                    
+                </div>
+                <br>
+                <input type="submit" value="Submit Form">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title%}Thank You!{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6" id="header">
+            <h2>Thank You!</h2>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6" id="content">
+            <p> Thank you, {{ firstname }} {{ lastname }}, for applying to be a {{ job }}. Your minimum salary requirement is {{ '${:,.0f}'.format(salaryreq|float) }} dollars.</p>
+            <p>If you would like to apply for another job, please click
+            <a href="/application-form">here</a>.</p>.
+        </div>
+    </div>
+
+{% endblock %}
